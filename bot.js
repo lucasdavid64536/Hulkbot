@@ -41,16 +41,10 @@ require('fs').readdir("./commands/", (err, files) => {
 bot.on("ready", () => {
   require('./util/poststats.js')(bot)
   require('./util/consoles.js')(bot, config)
-  bot.user.setActivity("Loading Hulkbot...", {type: "STREAMING", url: "https://twitch.tv/freakinghulk"})
-  // Post bot stats
-  snekfetch.post(`https://discordbots.org/api/bots/${bot.user.id}/stats`)
-    .set('Authorization', process.env.tok)
-    .send({ server_count: bot.guilds.size })
-    .then(() => console.log('Updated discordbots.org stats.'))
-    .catch(err => console.error(`Whoops something went wrong: ${err.body}`));
-  
+  bot.user.setActivity("Loading Musicaly...", {type: "STREAMING", url: "https://twitch.tv/no"})
+   
   setTimeout(() => {
-    bot.user.setActivity(`for h!help | ${bot.guilds.array().length} servers`, {type: "WATCHING"});
+    bot.user.setActivity(`for m!help | ${bot.guilds.array().length} servers`, {type: "WATCHING"});
   }, 20000)
 
   bot.guilds.forEach((guild, id) => {
