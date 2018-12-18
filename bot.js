@@ -20,7 +20,7 @@ const gdata = require('./database/mongoose/GuildData')
 // End of init
 
 // The bot's support server invite vvv
-bot.invite = "https://discord.gg/qEFNkxB"
+bot.invite = "https://discord.gg/UpjCWx9"
 // No more invite.
 
 // Gather commands
@@ -75,7 +75,7 @@ bot.on("message", message => {
     if (data == null) {
       const newG = new gdata({
         guildId: message.guild.id,
-        prefix: "h!",
+        prefix: "m!",
         isPremium: false,
         welcome: null,
         modlog: null,
@@ -105,14 +105,14 @@ bot.on("message", message => {
       console.log(`${message.author.username} used the ${loggedcmd} command.`);
       baselogger(bot, `**Command Run**\n\n**Command:** ${loggedcmd}\n**User:** ${message.author.tag}\n**Message:** ${message.content}\n**Guild:** ${message.guild.name}\n**Channel:** ${message.channel.name}`);
   } 
-    if (message.content == "i love you hulkbot") {
+    if (message.content == "i love you musical") {
     message.channel.send("oh god, not another one");
   }
   
   if (message.isMentioned("294194506113220608")) {
     const em = new discord.RichEmbed()
-    .setTitle(`Hulkbot Intro`)
-    .setDescription(`Hey! Welcome to my intro! For help, use h!help! For info about me, use h!info!`)
+    .setTitle(`Musical Intro`)
+    .setDescription(`Hey! Welcome to my intro! For help, use m!help! For info about me, use m!info!`)
     .setColor("GREEN")
     .setTimestamp()
     console.log('lol')
@@ -135,10 +135,10 @@ bot.login(process.env.botToken);
 let upmsg = `Oh yeah, more updates! New updates:\n${updates}`
   async function senddat(up,msg) {
     if (up == null) return;
-   await bot.channels.get('441982405985828864').send(msg).then(() => {
+   await bot.channels.get('521749375714721815').send(msg).then(() => {
      up.pop(up)
    })
-   await bot.channels.get('441982440005697539').send(msg).then(() => {
+   await bot.channels.get('521749375714721815').send(msg).then(() => {
      up.pop(up)
    })
   }
